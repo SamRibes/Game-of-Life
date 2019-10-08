@@ -1,7 +1,7 @@
 import javax.swing.JFrame;
 
 //This class creates our Finch Control Form!
-public class GameofLifeGUI implements Runnable
+public class GameOfLifeGUI implements Runnable
 {
 	//Since the class 'Runnable' is an implementation we have to define this method
 	public void run() 
@@ -11,7 +11,7 @@ public class GameofLifeGUI implements Runnable
         //Disable the exit 'X' and close menu
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         //Create and set up the content Pane based on our FinchControl class
-        GameofLifeControl newContentPane = new GameofLifeControl();
+        GameOfLifeControl newContentPane = new GameOfLifeControl();
         //Sets the panes as opaque
         newContentPane.setOpaque(true);
         //Puts the Pane in the Window
