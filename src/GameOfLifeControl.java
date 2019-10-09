@@ -30,6 +30,7 @@ public class GameOfLifeControl extends JPanel implements ActionListener 	//Inher
 	private static ArrayList<boolean[][]> GridStorage = new ArrayList<>();	//Storage array for the Grid.
 	private static ArrayList<int[][]> CountStorage = new ArrayList<>();		//Storage array for the Counts.
 	private static final int TickTime = 100;										//The time in milliseconds between each iteration.
+
     GameOfLifeControl()
     {
     	//Caption for the Start button.
@@ -195,7 +196,7 @@ public class GameOfLifeControl extends JPanel implements ActionListener 	//Inher
     		GameArray = ProgressArray(GameArray);	//Then it calls the ProgressArray method to create the next iteration of the array.
 			SetCellColour(g, SquareColourDead, SquareColourAlive);
 		}
-    	StoreGrid(GameArray);  //Stores the finished game board in StoreGrid ArrayList
+    	//StoreGrid(GameArray);  //Stores the finished game board in StoreGrid ArrayList
     }
 
 	private void SetCellColour(Graphics g, Color sqaurecolourDead, Color sqaureColourAlive) {
@@ -205,7 +206,6 @@ public class GameOfLifeControl extends JPanel implements ActionListener 	//Inher
 		{
 			for(j = 0; j < GridSize; j++)
 			{
-
 				if(!GameArray[i][j])		//If the cell is false then the rectangle is red.
 				{
 					g.setColor(sqaurecolourDead);	//Sets the colour.
@@ -372,24 +372,23 @@ public class GameOfLifeControl extends JPanel implements ActionListener 	//Inher
 	private static void StoreGrid(boolean[][] Grid)		//Method used to store the the grid iterations
 	{
 		GridStorage.add(Grid);							//Adds the grid to the ArrayList GridStorage
-		
-		/*boolean LookatGrid[][] = GridStorage.get(1);
-		
+		boolean[][] LookatGrid = GridStorage.get(1);
+
 		for(int i = 0; i < GridSize; i++)
 		{
 			for(int j = 0; j < GridSize; j++)
 			{
-				if(LookatGrid[i][j] == false)
+				if(!LookatGrid[i][j])
 				{
 					System.out.print("D ");
 				}
-				if(LookatGrid[i][j] == true)
+				else
 				{
 					System.out.print("A ");
 				}
 			}
 			System.out.println();
-		}*/
+		}
 		
 	}
 	
