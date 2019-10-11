@@ -24,7 +24,7 @@ public class GameOfLifeControl extends JPanel implements ActionListener 	//Inher
 	private JButton resetButton;		//Start, End, Exit and Pause buttons.
 	private JLabel iterationLabel;
 	private Timer timer;													//Timer(used for spacing out the iterations).
-	private static int GridSize = 100;										//Grid Size.
+	private static int GridSize = 250;										//Grid Size.
 	private long Iterations;														//Keeps the count for the number of iterations.
 	private boolean[][] GameArray;                                                    //The array that the board takes place on.
 	private static ArrayList<boolean[][]> GridStorage = new ArrayList<>();	//Storage array for the Grid.
@@ -158,11 +158,11 @@ public class GameOfLifeControl extends JPanel implements ActionListener 	//Inher
     		System.out.println("Timer");	//Logs the action
     		Iterations++;					//Adds 1 to the iteration count
         	iterationLabel.setText(String.valueOf(Iterations));		//Sets the label value to the iteration count
-			try {
+			/*try {
 				PrintToFile(GridStorage.get((int) Iterations));
 			} catch (IOException e1) {
 				e1.printStackTrace();
-			}
+			}*/
         	repaint();		//Redraws the window
         }
     	
@@ -371,7 +371,7 @@ public class GameOfLifeControl extends JPanel implements ActionListener 	//Inher
 	
 	private static void StoreGrid(boolean[][] Grid)		//Method used to store the the grid iterations
 	{
-		GridStorage.add(Grid);							//Adds the grid to the ArrayList GridStorage
+		/*GridStorage.add(Grid);							//Adds the grid to the ArrayList GridStorage
 		boolean[][] LookatGrid = GridStorage.get(1);
 
 		for(int i = 0; i < GridSize; i++)
@@ -389,7 +389,7 @@ public class GameOfLifeControl extends JPanel implements ActionListener 	//Inher
 			}
 			System.out.println();
 		}
-		
+		*/
 	}
 	
 	private static void StoreCount(int[][] CountArray)		//Method used to store the the counts for each iteration
